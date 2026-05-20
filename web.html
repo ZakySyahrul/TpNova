@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TpNova Solusi - Transformasi Digital & Inovasi Bisnis</title>
+
+    <!-- Tailwind CSS for modern responsive utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tpnova: {
+                navy: "#0B2346" /* Dark navy */,
+                blue: "#1E5A9B" /* Bright blue accent */,
+                teal: "#0d9488" /* Teal action */,
+                slate: "#5E5E5E" /* Gray body text */,
+                light: "#C99A1A" /* Light background */,
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      .glass-nav {
+        background-color: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
+  <body class="bg-tpnova-light text-slate-800">
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav shadow-lg border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Brand Identity -->
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-tr from-tpnova-blue to-tpnova-teal rounded-xl flex items-center justify-center shadow-md">
+              <div class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center shadow-md border border-white/10 bg-white shrink-0">
+                <img src="/img/LOGO_TPNOVA.png" alt="TpNova Logo" class="w-full h-full object-cover rounded-full" />
+              </div>
+            </div>
+            <div>
+              <span class="text-xl font-extrabold text-[#C99A1A] tracking-wider block">TPNOVA</span>
+              <span class="text-[10px] text-tpnova-teal font-bold tracking-widest block -mt-1">SOLUSI DIGITAL PENDIDIKAN BANGSA</span>
+            </div>
+          </div>
+
+          <!-- Desktop Navigation Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="text-slate-300 hover:text-[#C99A1A] font-medium transition-colors duration-200">Beranda</a>
+            <a href="#about" class="text-slate-300 hover:text-[#C99A1A] font-medium transition-colors duration-200">Tentang Kami</a>
+            <a href="#services" class="text-slate-300 hover:text-[#C99A1A] font-medium transition-colors duration-200">Layanan</a>
+            <a href="#projects" class="text-slate-300 hover:text-[#C99A1A] font-medium transition-colors duration-200">Portofolio</a>
+            <a href="#contact" class="text-slate-300 hover:text-[#C99A1A] font-medium transition-colors duration-200">Kontak</a>
+          </div>
+
+          <!-- Action Button -->
+          <div class="hidden md:flex items-center">
+            <a href="#contact" class="bg-tpnova-blue text-white hover:text-[#C99A1A] font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-md"> Mulai Konsultasi </a>
+          </div>
+
+          <!-- Mobile Menu Toggler -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-toggle" class="text-slate-300 hover:text-white focus:outline-none rounded-lg p-2">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-tpnova-navy border-t border-slate-800">
+        <div class="px-4 pt-2 pb-6 space-y-3 shadow-inner">
+          <a href="#home" class="mobile-link block text-slate-300 hover:text-tpnova-teal px-3 py-2.5 rounded-lg text-base font-semibold">Beranda</a>
+          <a href="#about" class="mobile-link block text-slate-300 hover:text-tpnova-teal px-3 py-2.5 rounded-lg text-base font-semibold">Tentang Kami</a>
+          <a href="#services" class="mobile-link block text-slate-300 hover:text-tpnova-teal px-3 py-2.5 rounded-lg text-base font-semibold">Layanan</a>
+          <a href="#projects" class="mobile-link block text-slate-300 hover:text-tpnova-teal px-3 py-2.5 rounded-lg text-base font-semibold">Portofolio</a>
+          <a href="#contact" class="mobile-link block text-slate-300 hover:text-tpnova-teal px-3 py-2.5 rounded-lg text-base font-semibold">Kontak</a>
+          <div class="pt-4">
+            <a href="#contact" class="mobile-link w-full text-center block bg-tpnova-blue text-white font-bold py-3 rounded-lg shadow-md"> Hubungi Kami </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative bg-tpnova-navy pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden flex items-center min-h-screen text-white">
+      <!-- Ambient Background Accents -->
+      <div class="absolute top-1/4 -left-32 w-80 h-80 bg-tpnova-blue rounded-full filter blur-[100px] opacity-25 pointer-events-none"></div>
+      <div class="absolute bottom-10 -right-20 w-80 h-80 bg-tpnova-teal rounded-full filter blur-[100px] opacity-25 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Hero Content Left -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-tpnova-teal text-sm font-semibold border border-slate-800">
+              <i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Mitra Transformasi Digital Terpercaya
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+              Akselerasi Bisnis <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-tpnova-blue to-tpnova-teal">Lewat Solusi Teknologi</span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+              Kami membantu berbagai skala industri merancang, membangun, dan mengoptimalkan sistem digital modern untuk meningkatkan produktivitas serta performansi bisnis Anda.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+              <a href="#about" class="bg-tpnova-blue hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                Pelajari Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#services" class="bg-slate-850 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all duration-300 flex items-center justify-center gap-2"> Layanan Kami </a>
+            </div>
+          </div>
+
+          <!-- Hero Graphic Right -->
+          <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1000">
+            <div class="relative mx-auto max-w-sm sm:max-w-md">
+              <!-- Framing borders -->
+              <div class="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-tpnova-blue rounded-tl-lg pointer-events-none"></div>
+              <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-tpnova-teal rounded-br-lg pointer-events-none"></div>
+
+              <!-- Main Graphic -->
+              <div class="overflow-hidden rounded-2xl border border-slate-800 shadow-2xl bg-slate-900">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+                  alt="Tech Collaboration Dashboard"
+                  class="w-full h-[400px] object-cover hover:scale-105 transition-all duration-700 opacity-90"
+                  onerror="this.src = 'https://placehold.co/600x400/0f172a/ffffff?text=TpNova+Solutions'"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <!-- About Media Showcase -->
+          <div class="lg:col-span-6 grid grid-cols-2 gap-4 relative" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="space-y-4">
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
+                  alt="Work team collaboration"
+                  class="w-full h-44 object-cover"
+                  onerror="this.src = 'https://placehold.co/300x200/2563eb/ffffff?text=Team'"
+                />
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop"
+                  alt="Corporate Meeting"
+                  class="w-full h-56 object-cover"
+                  onerror="this.src = 'https://placehold.co/300x300/0d9488/ffffff?text=Meeting'"
+                />
+              </div>
+            </div>
+            <div class="space-y-4 pt-8">
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
+                  alt="Infrastructure Tech"
+                  class="w-full h-56 object-cover"
+                  onerror="this.src = 'https://placehold.co/300x300/1e293b/ffffff?text=Tech'"
+                />
+              </div>
+              <div class="rounded-xl overflow-hidden shadow-md">
+                <img
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600&auto=format&fit=crop"
+                  alt="Tech Office"
+                  class="w-full h-44 object-cover"
+                  onerror="this.src = 'https://placehold.co/300x200/2563eb/ffffff?text=Office'"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- About Info Text & Vision/Mission Tabs -->
+          <div class="lg:col-span-6 space-y-6" data-aos="fade-left" data-aos-duration="1000">
+            <div>
+              <span class="text-sm font-bold text-tpnova-blue tracking-widest uppercase block mb-1">SIAPA KAMI</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Mendorong Solusi Inovatif Untuk Kebutuhan Industri</h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              TpNova adalah penyedia layanan transformasi digital profesional yang berkomitmen untuk mendukung efisiensi operasional organisasi lewat rekayasa teknologi berkualitas, andal, dan aman.
+            </p>
+
+            <!-- Interactive Simple Tabbed Content (Visi & Misi) -->
+            <div class="border border-slate-200 rounded-xl bg-slate-50 p-6 shadow-sm">
+              <div class="flex gap-4 border-b border-slate-200 pb-3 mb-4">
+                <button onclick="switchAboutTab('vision')" id="tab-btn-vision" class="font-bold text-sm text-tpnova-blue border-b-2 border-tpnova-blue pb-1 transition-all">Visi</button>
+                <button onclick="switchAboutTab('mission')" id="tab-btn-mission" class="font-bold text-sm text-slate-500 hover:text-tpnova-blue pb-1 transition-all">Misi</button>
+              </div>
+
+              <div id="tab-content-vision" class="text-sm text-slate-600 leading-relaxed">
+                Menjadi perusahaan teknologi pendidikan terdepan dalam menciptakan ekosistem sekolah digital yang aman, transparan, dan terintegrasi bagi siswa, orang tua, dan institusi pendidikan.
+              </div>
+              <div id="tab-content-mission" class="hidden text-sm text-slate-600 leading-relaxed space-y-2">
+                <ul class="list-disc list-inside space-y-1">
+                  <li>Mengembangkan solusi kartu pintar sekolah untuk mendukung absensi dan transaksi non-tunai siswa secara praktis dan aman.</li>
+                  <li>Membantu orang tua memantau aktivitas transaksi dan kehadiran anak secara real-time.</li>
+                  <li>Menjalin kerja sama strategis dengan sekolah dan perbankan untuk menciptakan ekosistem pendidikan digital yang terpercaya.</li>
+                  <li>Meningkatkan keamanan dan efisiensi pengelolaan aktivitas siswa di lingkungan sekolah.</li>
+                  <li>Menghadirkan inovasi teknologi yang mendukung kebiasaan finansial sehat dan pendidikan karakter sejak dini.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-slate-50 border-t border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-sm font-bold text-tpnova-blue tracking-widest uppercase block mb-1">LAYANAN KAMI</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Layanan Profesional Terintegrasi</h2>
+          <p class="text-slate-600 mt-3">Kami menghadirkan portofolio keahlian komprehensif untuk mendukung pilar kesuksesan strategi digital Anda.</p>
+        </div>
+
+        <!-- Simple Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+          <!-- Service 1 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-blue-100 text-tpnova-blue rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Aplikasi Enterprise</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Pengembangan platform web dan mobile kustom dengan basis kode modern, optimal, dan berkinerja tinggi.</p>
+            </div>
+            <span class="text-xs text-tpnova-blue font-bold tracking-wider uppercase mt-6 block">Kustom & Aman</span>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-teal-100 text-tpnova-teal rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Infrastruktur & Cloud</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Migrasi, pemeliharaan, serta pengelolaan sistem server cloud yang andal, scalable, dan hemat biaya.</p>
+            </div>
+            <span class="text-xs text-tpnova-teal font-bold tracking-wider uppercase mt-6 block">Uptime 99.9%</span>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Sertifikasi Keamanan</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Pengujian keamanan siber (Penetration Test) dan audit standar operasional untuk perlindungan data penuh.</p>
+            </div>
+            <span class="text-xs text-indigo-600 font-bold tracking-wider uppercase mt-6 block">Zero-Trust Audit</span>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Data & AI Analytics</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Implementasi model pengolahan data pintar, visualisasi, dan otomasi alur kerja berbasis data analitik.</p>
+            </div>
+            <span class="text-xs text-emerald-600 font-bold tracking-wider uppercase mt-6 block">Prediksi Cerdas</span>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Konsultasi Strategis</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Perencanaan arsitektur teknologi informasi jangka panjang untuk merampingkan sistem operasional bisnis.</p>
+            </div>
+            <span class="text-xs text-amber-600 font-bold tracking-wider uppercase mt-6 block">IT Roadmap</span>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <h3 class="font-extrabold text-xl text-slate-900">Pemeliharaan & SLA</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">Dukungan operasional berkelanjutan secara berkala untuk menjaga kestabilan dan keandalan sistem Anda.</p>
+            </div>
+            <span class="text-xs text-red-600 font-bold tracking-wider uppercase mt-6 block">SLA Terjamin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="projects" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+          <span class="text-sm font-bold text-tpnova-blue tracking-widest uppercase block mb-1">PORTOFOLIO KAMI</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Karya Nyata yang Telah Diimplementasikan</h2>
+          <p class="text-slate-600 mt-3">Beberapa contoh kolaborasi rekayasa sistem yang sukses diimplementasikan untuk menyokong performa mitra kami.</p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="100">
+          <!-- Project 1 -->
+          <div class="group bg-white rounded-2xl overflow-hidden border border-slate-150 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="h-52 overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=600&auto=format&fit=crop"
+                alt="E-Commerce Ecosystem"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src = 'https://placehold.co/400x300/2563eb/ffffff?text=Project+E-Commerce'"
+              />
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-bold text-tpnova-blue tracking-wider uppercase">Fintech</span>
+              <h4 class="font-extrabold text-lg text-slate-900 mt-1">E-Wallet ArthaPay</h4>
+              <p class="text-slate-500 text-sm mt-2 leading-relaxed">Pengembangan platform transaksi dompet digital kustom dengan keamanan tingkat tinggi dan audit kepatuhan.</p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="group bg-white rounded-2xl overflow-hidden border border-slate-150 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="h-52 overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop"
+                alt="ERP Software Enterprise"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src = 'https://placehold.co/400x300/0d9488/ffffff?text=ERP+System'"
+              />
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-bold text-tpnova-teal tracking-wider uppercase">Enterprise</span>
+              <h4 class="font-extrabold text-lg text-slate-900 mt-1">Core ERP Logistics</h4>
+              <p class="text-slate-500 text-sm mt-2 leading-relaxed">Sistem manajemen stok, pelacakan rute kurir, dan akuntansi inventaris terintegrasi secara real-time.</p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="group bg-white rounded-2xl overflow-hidden border border-slate-150 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="h-52 overflow-hidden relative">
+              <img
+                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=600&auto=format&fit=crop"
+                alt="Digital Portal System"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src = 'https://placehold.co/400x300/1e293b/ffffff?text=Portal'"
+              />
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-bold text-purple-600 tracking-wider uppercase">SaaS Portal</span>
+              <h4 class="font-extrabold text-lg text-slate-900 mt-1">Portal CareHealth</h4>
+              <p class="text-slate-500 text-sm mt-2 leading-relaxed">Dashboard manajemen data riwayat pemeriksaan pasien klinik dan resep digital terenkripsi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <!-- Contact Info Details Left -->
+          <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
+            <div>
+              <span class="text-sm font-bold text-tpnova-blue tracking-widest uppercase block mb-1">HUBUNGI KAMI</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Konsultasikan Solusi Digital Terbaik Anda</h2>
+              <p class="text-slate-600 mt-4 leading-relaxed">Hubungi tim spesialis kami untuk mendiskusikan kebutuhan sistem, penjadwalan presentasi, atau penawaran kerja sama.</p>
+            </div>
+
+            <div class="space-y-6">
+              <!-- Office Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-blue-100 text-tpnova-blue flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Alamat Kantor Pusat</h4>
+                  <p class="text-slate-600 text-sm mt-1 leading-relaxed">JIn Bhakti No. 2A (D). Cilandak Timur, Ps. Minggu, Jakarta Selatan</p>
+                </div>
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="flex items-start gap-4">
+                <div class="w-11 h-11 rounded-lg bg-teal-100 text-tpnova-teal flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">Saluran Komunikasi Resmi</h4>
+                  <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                    +6281316630016 <br />
+                    tpnova@tpnovaindonesia.co.id
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Right -->
+          <div class="lg:col-span-7 bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative" data-aos="fade-left">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2"><i class="fa-regular fa-paper-plane text-tpnova-blue"></i> Ajukan Formulir Pertanyaan</h3>
+
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Nama Lengkap</label>
+                  <input
+                    type="text"
+                    id="client-name"
+                    required
+                    placeholder="Contoh: Aditya Nugroho"
+                    class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-tpnova-blue focus:outline-none transition-all"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Nama Perusahaan</label>
+                  <input
+                    type="text"
+                    id="company-name"
+                    required
+                    placeholder="Contoh: Swadaya Group"
+                    class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-tpnova-blue focus:outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Email Kerja</label>
+                  <input
+                    type="email"
+                    id="client-email"
+                    required
+                    placeholder="Contoh: adit@company.id"
+                    class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-tpnova-blue focus:outline-none transition-all"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Topik Layanan</label>
+                  <select id="project-scope" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-tpnova-blue focus:outline-none transition-all">
+                    <option value="Aplikasi Enterprise">Aplikasi Enterprise</option>
+                    <option value="Infrastruktur & Cloud">Infrastruktur & Cloud</option>
+                    <option value="Sertifikasi Keamanan">Sertifikasi Keamanan</option>
+                    <option value="Konsultasi Strategis">Konsultasi Strategis</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="block text-xs font-bold text-slate-600 uppercase tracking-wider">Pesan Pembahasan</label>
+                <textarea
+                  id="client-message"
+                  rows="4"
+                  placeholder="Tulis rincian pertanyaan Anda atau kendala teknologi yang sedang dihadapi..."
+                  class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:ring-2 focus:ring-tpnova-blue focus:outline-none transition-all"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-tpnova-blue hover:bg-blue-700 text-white font-extrabold py-3.5 rounded-xl transition-all duration-300 shadow-md">Kirim Formulir <i class="fa-solid fa-arrow-right ml-1"></i></button>
+            </form>
+
+            <!-- Custom Success Modal overlay -->
+            <div id="success-modal" class="hidden absolute inset-0 bg-white/95 rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-6 z-20 transition-all duration-300">
+              <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl shadow-md">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div class="space-y-2">
+                <h4 class="text-xl font-extrabold text-slate-900" id="success-modal-title">Pesan Terkirim!</h4>
+                <p class="text-slate-600 text-sm max-w-sm mx-auto" id="success-modal-message">Terima kasih atas pesan Anda. Perwakilan TpNova Digital akan segera menghubungi kontak Anda dalam waktu selambat-lambatnya 1x24 jam kerja.</p>
+              </div>
+              <button onclick="closeSuccessModal()" class="bg-tpnova-navy hover:bg-slate-800 text-white px-6 py-2 rounded-xl text-sm font-semibold transition-all shadow-sm">Tutup Halaman Sukses</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-tpnova-navy text-slate-400 pt-16 pb-12 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+          <!-- Footer 1: Brand details -->
+          <div class="md:col-span-6 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full overflow-hidden flex items-center justify-center shadow-md border border-white/10 bg-white shrink-0">
+                <img src="/img/LOGO_TPNOVA.png" alt="TpNova Logo" class="w-full h-full object-cover rounded-full" />
+              </div>
+              <div>
+                <span class="text-xl font-extrabold text-[#C99A1A] tracking-wider block">TPNOVA</span>
+                <span class="text-[10px] text-tpnova-teal font-bold tracking-widest block -mt-1">SOLUSI DIGITAL PENDIDIKAN BANGSA</span>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-md">Penyedia layanan integrasi arsitektur digital dan modernisasi sistem korporat terintegrasi dengan komitmen pada performa berkelanjutan.</p>
+          </div>
+
+          <!-- Footer 2: Navigation Links -->
+          <div class="md:col-span-3 space-y-3">
+            <h4 class="text-white font-bold text-sm tracking-widest uppercase">Perusahaan</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#about" class="hover:text-tpnova-teal transition-colors">Tentang Kami</a></li>
+              <li><a href="#services" class="hover:text-tpnova-teal transition-colors">Layanan Teknologi</a></li>
+              <li><a href="#projects" class="hover:text-tpnova-teal transition-colors">Portofolio</a></li>
+            </ul>
+          </div>
+
+          <!-- Footer 3: Social & Connect -->
+          <div class="md:col-span-3 space-y-3">
+            <h4 class="text-white font-bold text-sm tracking-widest uppercase">Hubungi Kami</h4>
+            <p class="text-sm">JIn Bhakti No. 2A (D). Cilandak Timur, Ps. Minggu, Jakarta Selatan</p>
+            <div class="flex items-center gap-3 pt-2">
+              <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-tpnova-blue hover:text-white flex items-center justify-center text-slate-300 transition-all"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+              <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-tpnova-blue hover:text-white flex items-center justify-center text-slate-300 transition-all"><i class="fa-brands fa-instagram text-xs"></i></a>
+              <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-tpnova-blue hover:text-white flex items-center justify-center text-slate-300 transition-all"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 text-xs text-slate-500">
+          <p>&copy; 2026 TpNova Solusi Digital. Hak Cipta Dilindungi Undang-Undang.</p>
+          <span>Inovasi Tanpa Batas</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="scrollToTop()" id="back-to-top" class="hidden fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-tpnova-teal hover:bg-teal-500 text-white shadow-lg flex items-center justify-center transition-all duration-300">
+      <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 800,
+        easing: "ease-out-cubic",
+      });
+
+      // Dynamic Header Transparency and Back to Top Toggler
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        if (window.scrollY > 50) {
+          nav.classList.add("py-2", "bg-tpnova-navy");
+          nav.classList.remove("py-0");
+          backToTopBtn.classList.remove("hidden");
+          backToTopBtn.classList.add("flex");
+        } else {
+          nav.classList.remove("py-2", "bg-tpnova-navy");
+          backToTopBtn.classList.add("hidden");
+          backToTopBtn.classList.remove("flex");
+        }
+      });
+
+      // Mobile Nav Drawer Toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Simple About Tab Switcher (Vision/Mission)
+      function switchAboutTab(tab) {
+        const tabVision = document.getElementById("tab-content-vision");
+        const tabMission = document.getElementById("tab-content-mission");
+        const btnVision = document.getElementById("tab-btn-vision");
+        const btnMission = document.getElementById("tab-btn-mission");
+
+        if (tab === "vision") {
+          tabVision.classList.remove("hidden");
+          tabMission.classList.add("hidden");
+          btnVision.className = "font-bold text-sm text-tpnova-blue border-b-2 border-tpnova-blue pb-1 transition-all";
+          btnMission.className = "font-bold text-sm text-slate-500 hover:text-tpnova-blue pb-1 transition-all";
+        } else {
+          tabVision.classList.add("hidden");
+          tabMission.classList.remove("hidden");
+          btnVision.className = "font-bold text-sm text-slate-500 hover:text-tpnova-blue pb-1 transition-all";
+          btnMission.className = "font-bold text-sm text-tpnova-blue border-b-2 border-tpnova-blue pb-1 transition-all";
+        }
+      }
+
+      // Form Submit Handler (Simulated success notification modal)
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        const clientName = document.getElementById("client-name").value;
+        const companyName = document.getElementById("company-name").value;
+        const scopeSelected = document.getElementById("project-scope").value;
+
+        // Personalize the success message modal
+        document.getElementById("success-modal-title").textContent = "Pesan Berhasil Terkirim!";
+        document.getElementById("success-modal-message").innerHTML =
+          `Halo Rekan <strong>${clientName}</strong> dari <strong>${companyName}</strong>. Topik mengenai <strong>${scopeSelected}</strong> telah masuk ke antrean konsultasi tim teknis kami.`;
+
+        // Toggle modal state visibility
+        document.getElementById("success-modal").classList.remove("hidden");
+      }
+
+      function closeSuccessModal() {
+        document.getElementById("success-modal").classList.add("hidden");
+        // Reset input values
+        document.querySelector("#contact form").reset();
+      }
+
+      // Scroll back to top helper
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
